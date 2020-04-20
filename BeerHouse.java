@@ -40,6 +40,15 @@ public class BeerHouse {
         {
             available =false;
             notifyAll();
+        }else if (beerq == beerConsume)
+        {
+            beerq -= beerConsume;
+            System.out.println("El stock de BeerHouse es : " + beerq);
+            try{
+                wait();
+            }catch (InterruptedException e){
+                e.printStackTrace();
+                }
         }else {
             beerq -= beerConsume;
             System.out.println("El stock de BeerHouse es : " + beerq);
