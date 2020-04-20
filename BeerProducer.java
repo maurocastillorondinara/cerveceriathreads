@@ -17,8 +17,11 @@ public class BeerProducer extends Thread{
     }
 
     public void run(){
-        int q = product();
-        this.house.setBeer(q);
-        System.out.println("Se recargo: "+q+" Cervezas");
+        while(true){
+            int q = product();
+            this.house.setBeer(q);
+            System.out.println("Se recargo: "+q+" Cervezas");
+        }
+
     }
 }
